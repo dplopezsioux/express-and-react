@@ -1,0 +1,56 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": ["plugin:import/recommended", "plugin:react/recommended", "standard"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "semi": [2, "always"],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "only-multiline",
+        "objects": "only-multiline",
+        "imports": "only-multiline",
+        "exports": "only-multiline",
+        "functions": "only-multiline"
+      }
+    ],
+    "space-before-function-paren": 0,
+    "spaced-comment": [
+      "error",
+      "always",
+      {
+        "line": {
+          "markers": ["/"],
+          "exceptions": ["-", "+"]
+        },
+        "block": {
+          "markers": ["!", "-", "+"],
+          "exceptions": ["*"],
+          "balanced": true
+        }
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"],
+        "moduleDirectory": ["node_modules", "src/", "server/"]
+      }
+    }
+  }
+}
